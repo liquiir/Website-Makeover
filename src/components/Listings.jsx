@@ -1,7 +1,7 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import Input from "./ui/Input";
-import Dropdown from "./ui/Dropdown";
+import Input from "./ui/input";
+import Dropdown from "./ui/dropdown";
 
 const Listing = () => {
   const ref = useRef(null);
