@@ -1,5 +1,5 @@
-import Input from "./ui/Input";
-import Dropdown from "./ui/Dropdown";
+import Input from "./ui/input";
+import Dropdown from "./ui/dropdown";
 
 const Contact = () => {
     return (
