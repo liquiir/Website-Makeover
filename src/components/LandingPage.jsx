@@ -9,7 +9,7 @@ const LandingPage = () => {
         <img
           src={ImageBackground}
           alt="ImgBack"
-          className="h-[380px] m:h-[300px] lp:h-[320px] lg:h-[550px] w-full object-cover  "
+          className="h-[380px] m:h-[300px] lp:h-[320px] lg:h-[550px] w-full object-cover z-index-[-1]"
         />
         {/* Text under the image */}
         <div className="text-left mt-4 px-4 md:px-10">

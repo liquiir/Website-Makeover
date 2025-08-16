@@ -55,6 +55,35 @@ export default function ImageGallery() {
     })
   }
 
+  const handleDragEnd = (event, info) => {
+    const threshold = 30 // reduced threshold for more responsive dragging
+    const velocity = Math.abs(info.velocity.x) + Math.abs(info.velocity.y)
+    const isMobile = window.innerWidth < 1024
+    
+    // Consider velocity for more natural feeling
+    const effectiveThreshold = velocity > 500 ? threshold * 0.5 : threshold
+    
+    if (isMobile) {
+      // Horizontal drag for mobile
+      if (info.offset.x > effectiveThreshold) {
+        // Dragged right - go to previous image
+        setCurrentIndex((prev) => Math.max(0, prev - 1))
+      } else if (info.offset.x < -effectiveThreshold) {
+        // Dragged left - go to next image
+        setCurrentIndex((prev) => Math.min(images.length - 1, prev + 1))
+      }
+    } else {
+      // Vertical drag for desktop
+      if (info.offset.y > effectiveThreshold) {
+        // Dragged down - go to previous image
+        setCurrentIndex((prev) => Math.max(0, prev - 1))
+      } else if (info.offset.y < -effectiveThreshold) {
+        // Dragged up - go to next image
+        setCurrentIndex((prev) => Math.min(images.length - 1, prev + 1))
+      }
+    }
+  }
+
   const getImageProps = (index) => {
     const distance = Math.abs(index - currentIndex)
     const isCenter = index === currentIndex
@@ -73,7 +102,7 @@ export default function ImageGallery() {
   return (
     <section
       ref={galleryRef}
-      className="relative min-h-screen flex flex-col lg:flex-row items-center p-4 lg:p-8 justify-between overflow-hidden rounded-t-3xl sm:rounded-t-4xl bg-[#d3d0c3] mt-[25px] sm:-mt-20 md:mt-20 lg:-mt-20 "
+      className="relative min-h-screen flex flex-col lg:flex-row items-center p-4 lg:p-8 justify-between overflow-hidden rounded-t-3xl sm:rounded-t-4xl bg-[#d3d0c3] mt-[25px] sm:-mt-20 md:mt-5 lg:-mt-20 "
     >
       {/* Gallery Title */}
       <motion.div 
@@ -135,6 +164,12 @@ export default function ImageGallery() {
         className="relative w-full max-w-md md:-translate-x-[150px] lg:translate-x-[120px] lg:h-96 h-32 mr-0 lg:mr-8 order-3 lg:order-none" 
         ref={constraintsRef} 
         onWheel={handleWheel}
+        drag
+        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+        dragElastic={0.2}
+        dragMomentum={false}
+        onDragEnd={handleDragEnd}
+        whileDrag={{ cursor: "grabbing" }}
         initial={{ x: 100, opacity: 0 }}
         animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -158,8 +193,9 @@ export default function ImageGallery() {
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: 300,
-                  damping: 30,
+                  stiffness: 400,
+                  damping: 40,
+                  mass: 0.8,
                 }}
                 whileHover={{
                   scale: props.scale * 1.05,

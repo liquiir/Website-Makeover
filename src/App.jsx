@@ -9,6 +9,7 @@ import Partnership from "./components/Partnership"
 import Listing from "./components/Listings"
 import Contact from "./components/Contact"
 import Footer from "./components/footer"
+import Menu from "./components/Menu"
 
 
 
@@ -27,8 +28,8 @@ function App() {
           <div>
             <img className="h-16 w-auto md:h-20" src={Logo} alt="Logo" />
           </div>
-          {/* Menu Text */}
-          <div className="text-[#283D3B] cursor-pointer text-base md:text-lg font-['Inter']">Menu</div>
+          {/* Menu Component */}
+          <Menu />
         </div>
       </nav>
 

@@ -20,7 +20,7 @@ const Listing = () => {
     <motion.section 
       ref={ref} 
       style={{ opacity, scale }}
-      className="relative min-h-screen p-4 md:p-8 flex items-center flex-col lg:flex-row gap-8 lg:gap-8 justify-center lg:justify-between"
+      className="relative min-h-screen p-4 md:p-8  flex items-center flex-col lg:flex-row gap-8 lg:gap-8 justify-center lg:justify-between"
     >
       <div className="text-[40px] sm:text-[60px] lg:text-[90px] font-['Amethysta'] text-center md:-translate-x-[200px] lg:ml-[250px] lg:text-left">
         {/* FIND YOUR */}
@@ -76,73 +76,47 @@ const Listing = () => {
       </div>
 
       {/* INPUTS */}
-      <div className="flex flex-col gap-4 w-full max-w-2xl lg:mr-[180px]">
-        {/* ROW 1 */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          {/* LOCATION */}
-          <div className="relative w-full sm:w-[321px]">
-            <label className="block text-sm font-['inter'] mb-2 text-foreground">
-              Location
-            </label>
+      <div className="flex flex-col gap-3 w-full max-w-2xl lg:mr-[180px]">
+        {/* ROW 1 - Location & Type */}
+        <div className="flex flex-col sm:flex-row gap-3">
+          <div className="relative w-full sm:flex-1">
+            <label className="block text-xs font-['inter'] mb-1 text-foreground">Location</label>
             <Dropdown placeholder="Select Location" />
           </div>
-
-          {/* TYPE */}
-          <div className="relative w-full sm:w-[321px]">
-            <label className="block text-sm font-['inter'] mb-2 text-foreground">
-              Type  
-            </label>
+          <div className="relative w-full sm:flex-1">
+            <label className="block text-xs font-['inter'] mb-1 text-foreground">Type</label>
             <Dropdown placeholder="Select Type" />
           </div>
         </div>
 
-        {/* ROW 2 */}
-        <div className="flex flex-col lg:flex-row gap-4">
-          {/* SORT BY */}
-          <div className="relative w-full lg:w-[321px]">
-            <label className="block text-sm font-['inter'] mb-2 text-foreground">
-              Sort By
-            </label>
+        {/* ROW 2 - Sort, Bedroom, Baths */}
+        <div className="flex flex-col sm:flex-row gap-3">
+          <div className="relative w-full sm:flex-1">
+            <label className="block text-xs font-['inter'] mb-1 text-foreground">Sort By</label>
             <Dropdown placeholder="Select Sort Option" />
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-            {/* BEDROOM */}
-            <div className="relative w-full sm:w-[150px]">
-              <label className="block text-sm font-['inter'] mb-2 text-foreground">
-                Bedroom
-              </label>
-              <Dropdown placeholder="Any Number" />
-            </div>
-            {/* BATHS */}
-            <div className="relative w-full sm:w-[150px]">
-              <label className="block text-sm font-['inter'] mb-2 text-foreground">
-                Baths
-              </label>
-              <Dropdown placeholder="Any Number" />
-            </div>
+          <div className="relative w-full sm:w-24">
+            <label className="block text-xs font-['inter'] mb-1 text-foreground">Beds</label>
+            <Dropdown placeholder="Any" />
+          </div>
+          <div className="relative w-full sm:w-24">
+            <label className="block text-xs font-['inter'] mb-1 text-foreground">Baths</label>
+            <Dropdown placeholder="Any" />
           </div>
         </div>
 
-        {/* ROW 3 */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          {/* MIN PRICE */}
-          <div className="relative w-full sm:w-[208.5px]">
-            <label className="block text-sm font-['inter'] mb-2 text-foreground">
-              Min Price
-            </label>
+        {/* ROW 3 - Price Range & Search */}
+        <div className="flex flex-col sm:flex-row gap-3 sm:items-end">
+          <div className="relative w-full sm:flex-1">
+            <label className="block text-xs font-['inter'] mb-1 text-foreground">Min Price</label>
             <Input placeholder="Min Price" />
           </div>
-          {/* MAX PRICE */}
-          <div className="relative w-full sm:w-[208.5px]">
-            <label className="block text-sm font-['inter'] mb-2 text-foreground">
-              Max Price
-            </label>
+          <div className="relative w-full sm:flex-1">
+            <label className="block text-xs font-['inter'] mb-1 text-foreground">Max Price</label>
             <Input placeholder="Max Price" />
           </div>
-
-          {/* BUTTON */}
           <motion.button
-            className="border-2 rounded-[5px] mt-8 lg:w-[208px] lg:h-[45px] ]  bg-[#283D3B] text-[#D8F3DC] px-4 py-2  font-medium "
+            className="border-2 rounded-[5px] bg-[#283D3B] text-[#D8F3DC] px-6 py-2 font-medium whitespace-nowrap sm:h-[45px]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

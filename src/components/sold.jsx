@@ -81,6 +81,9 @@ const Sold = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className="height-[150px] z-50">
+
+                        </div>
                     </div>
                     
                 </section>
