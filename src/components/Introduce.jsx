@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Phone } from 'lucide-react'
-import Marci from '../images/marci.jpg'
+import Marci from '../images/Marci.jpg'
 const Introduce = () => (
   <motion.section
     id="about"
