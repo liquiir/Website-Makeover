@@ -33,7 +33,7 @@ const Sold = () => {
 
         >
             {/* Full Screen Title Section */}
-            <section className="h-screen flex items-center justify-center bg-[#121212] ">
+            <section className="h-screen flex items-center justify-center bg-[#121212]  ">
                 <div className="px-4 sm:px-6 md:px-10 text-center">
                     <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[125px] leading-none font-['Inter'] font-bold text-[#D8F3DC]">
                         GET IT <span className="text-[#FAA307]">SOLD</span>
@@ -64,7 +64,7 @@ const Sold = () => {
 
                             {/* Image */}
                             <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                                <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl z-30">
+                                <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl z-30 md:mb-50">
                                     <img
                                         src={item.image}
                                         alt={item.title}
