@@ -1,7 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+// reference to satisfy some linters
+void motion
 import { Phone } from 'lucide-react'
 import Marci from '../images/Marci.jpg'
+
 const Introduce = () => (
   <motion.section
     id="about"
@@ -41,13 +44,13 @@ const Introduce = () => (
         </motion.div>
         {/* Image container with responsive positioning */}
         <motion.div 
-          className="mt-8 md:absolute md:bottom-0 md:right-0 md:translate-y-[20%]  lg:translate-y-[10%] xl:translate-y-50 xl:mr-10"
+          className="mt-8 md:absolute md:bottom-0 md:right-0 md:translate-y-[20%] lg:translate-y-[10%] xl:translate-y-50 xl:mr-10 relative z-50"
 
         >
           <img
             src={Marci}
             alt="Marci Metgerz"
-            className="block w-full md:w-auto h-auto max-h-[300px] md:max-h-[350px] lg:max-h-[450px]   "
+            className="block w-full md:w-auto h-auto max-h-[300px] md:max-h-[350px] lg:max-h-[450px] relative z-50"
           />
         </motion.div>
       </div>

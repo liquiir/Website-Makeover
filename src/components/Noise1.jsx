@@ -3,14 +3,12 @@ import Texture from "../images/Noise-texture.jpg"
 export default function NoiseOverlay() {
   return (
     <div
-      className="fixed inset-0 pointer-events-none z-20 opacity-40"
+      className="absolute inset-0 pointer-events-none z-50 opacity-80"
       style={{
         backgroundImage: `url(${Texture})`,
         backgroundRepeat: 'repeat',
         backgroundSize: 'auto',
-        backgroundAttachment: 'fixed',
-        backgroundPosition: '0 0',
-        mixBlendMode: 'multiply', 
+        mixBlendMode: 'multiply', // multiply darkens instead of brightening
       }}
     />
   )

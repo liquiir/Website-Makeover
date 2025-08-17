@@ -85,8 +85,6 @@ const Footer = () => {
                             <a href="#" className="hover:text-[#A47E1B] transition-colors">Privacy Policy</a>
                             <span>|</span>
                             <a href="#" className="hover:text-[#A47E1B] transition-colors">Terms of Service</a>
-                            <span>|</span>
-                            <span className="text-xs opacity-70">Powered by GoDaddy Airo</span>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import Service1 from "../images/stock images/service1.webp"
 import Service2 from "../images/stock images/service2.webp"
 import Service3 from "../images/stock images/service3.webp"
 
+
 const Services = () => {
   const slides = [
     {
@@ -106,15 +107,15 @@ const Services = () => {
             <div key={slide.id} className="px-4">
               {/* Image */}
               <div className="relative h-[40vh] mb-6">
-                <div className="relative w-full h-full overflow-hidden rounded-xl">
-                  <img
-                    src={slide.image}
-                    alt={slide.title}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-full h-full overflow-hidden rounded-xl z-30">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full h-full object-cover z-30"
+                    />
                   
-                  {/* Image Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    {/* Image Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   
                   {/* Image Number */}
                   <div className="absolute top-3 right-3 bg-[#FAA307]/90 text-[#121212] px-2 py-1 rounded-full font-bold text-sm">
@@ -196,11 +197,11 @@ const Services = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: false, margin: "-20%" }}
               >
-                <div className="relative w-full h-full overflow-hidden rounded-2xl">
+                <div className="relative w-full h-full overflow-hidden rounded-2xl z-30">
                   <motion.img
                     src={slide.image}
                     alt={slide.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover z-30"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.6 }}
                   />

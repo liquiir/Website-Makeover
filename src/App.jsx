@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div 
-      className="relative bg-[#d3d0c3] min-h-screen flex flex-col text-[#283D3B]"
+      className="relative bg-[#d3d0c3] bg-blend-multiply min-h-screen flex flex-col text-[#283D3B]"
     >
   {/* Noise overlay */}
   <NoiseOverlay />

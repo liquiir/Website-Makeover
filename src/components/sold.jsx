@@ -1,7 +1,7 @@
 import Stock1 from "../images/stock images/stock1.webp"
 import Stock2 from "../images/stock images/stock2.webp"
 import Stock3 from "../images/stock images/stock3.webp"
-import {motion} from "framer-motion"
+
 
 
 const Sold = () => {
@@ -29,7 +29,7 @@ const Sold = () => {
     ]
 
     return (
-        <motion.div className="relative bg-[#121212]"
+        <div className="relative bg-[#121212]"
 
         >
             {/* Full Screen Title Section */}
@@ -64,11 +64,11 @@ const Sold = () => {
 
                             {/* Image */}
                             <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                                <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl">
+                                <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl z-30">
                                     <img
                                         src={item.image}
                                         alt={item.title}
-                                        className="w-full h-full "
+                                        className="w-full h-full z-30"
                                     />
                                     
                                     {/* Image Overlay */}
@@ -81,15 +81,12 @@ const Sold = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="height-[150px] z-50">
-
-                        </div>
                     </div>
                     
                 </section>
                 
             ))}
-        </motion.div>
+        </div>
     )
 }
 
