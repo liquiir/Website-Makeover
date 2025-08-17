@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { Analytics } from '@vercel/analytics/react'
 
 // If the user refreshes while on a section anchor (e.g. /#gallery),
 // the browser will keep the hash and jump to that section on load.
@@ -16,6 +17,7 @@ if (typeof window !== 'undefined' && window.location.hash) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+  <App />
+  <Analytics />
   </StrictMode>,
 )
